@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>雷霆教室</title>
+    <link rel="stylesheet" href="雷霆.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <div id="overlay" class="overlay">
+        <div class="name-modal">
+            <h2>🎒 新生报到</h2>
+            <div style="font-size:1.2rem; margin-bottom:5px;">你叫什么名字？</div>
+            <input type="text" id="playerNameInput" placeholder="例如: 小智" maxlength="10">
+            <button id="confirmNameBtn">进入教室</button>
+        </div>
+    </div>
+
+    <div class="reset-btn" id="resetGameBtn">↺</div>
+
+    <div id="taskSidebar" class="task-sidebar minimized">
+        <div class="title">
+            📜 任务本
+            <span id="toggleTaskBtn">🔽</span>
+        </div>
+        <div id="taskContent" class="task-content"></div>
+    </div>
+
+    <div class="classroom">
+        <div class="window-left"></div>
+        <div id="timePanel" class="time-panel" style="display: none;">
+            <div class="time-item"><span>📅 周数</span><span class="value" id="weekDisplay">1/15</span></div>
+            <div class="time-item"><span>📆 星期</span><span class="value" id="dayDisplay">一</span></div>
+            <div class="time-item action-points"><span>⚡ 行动点</span><span class="value" id="actionDisplay">3</span></div>
+            <!-- 手动下一日按钮（工作日可用） -->
+            <div class="time-item" id="nextDayBtn" title="直接进入下一天（剩余行动点将清零）"><span>⏩</span><span class="value">下一日</span></div>
+        </div>
+
+        <div class="podium">
+            <span>🏫 雷霆教室 🏫</span>
+        </div>
+
+        <div id="gameMessage" class="game-message">👋 同学，先给自己取个名吧</div>
+
+        <div class="seats-grid" id="seatsGrid"></div>
+
+        <div id="weekendOverlay" class="weekend-overlay">
+            <h2>🌿 周末休息 🌿</h2>
+            <div style="font-size:1.5rem;">没有课，放松一下吧</div>
+            <button class="rest-btn" id="restBtn">😴 休息一天</button>
+        </div>
+
+        <div class="floor-line"></div>
+        <div style="text-align: center; margin-top: 10px; color: #ecd9b4; font-size: 0.7rem;">
+            👆 点击同学聊天 (+2好感) | 第一天只能和同桌聊 | 十五周结局 👆
+        </div>
+    </div>
+
+    <script src="雷霆.js"></script>
+</body>
+</html>
